@@ -1,4 +1,4 @@
-var billAmounts = [124, 48, 268, 180, 42];
+var billAmounts = [124, 48, 268, 180, 42] ;
 var tipArray= [];
 var finalPaid = [];
 

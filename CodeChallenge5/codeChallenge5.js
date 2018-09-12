@@ -25,6 +25,48 @@ var johnTip = {
 console.log(johnTip.tipCalculation());
 console.log(johnTip);
 
+var markTip = {
+    firstName: 'Mark',
+    billAmounts: [77, 375, 110, 45],
+    tipCalculation: function(){
+        this.tipArray = [];
+        this.finalPaid = [];
+        for (i = 0; i<this.billAmounts.length ;i++){
+            var bill = this.billAmounts[i];
+
+            if (bill < 100){
+                this.tipArray[i] = Math.round((bill*0.2)*100)/100 ;
+            }
+            else if (100 <= bill && bill<300){
+                this.tipArray[i] = Math.round((bill*0.1)*100)/100 ;
+            }
+            else{
+                this.tipArray[i] = Math.round((bill*0.25)*100)/100 ;
+            }
+            this.finalPaid[i] = bill + this.tipArray[i];
+        }
+
+    }
+
+}
+console.log(markTip.tipCalculation());
+console.log(markTip);
+console.log(markTip.tipArray);
+console.log(johnTip.tipArray);
+console.log("Mark pay " + tipAveCal(markTip.tipArray))
+console.log("John pay " + tipAveCal(johnTip.tipArray))
+
+function tipAveCal(tiparray){
+    var sum =0
+    for(i=0; i<tiparray.length;i++){
+        sum += tiparray[i]
+    }
+    var ave = sum/tiparray.length
+    return ave
+}
+
+
+
 
 
 //var billAmounts = [124, 48, 268, 180, 42] ;
